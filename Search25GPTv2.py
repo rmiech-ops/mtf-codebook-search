@@ -23,6 +23,12 @@ import streamlit.components.v1 as components
 import yaml
 import numpy as np
 from openai import AzureOpenAI
+
+client = AzureOpenAI(
+    api_key=api_key,
+    api_version=api_version,
+    azure_endpoint=endpoint
+)
 from dotenv import load_dotenv
 
 if "system_ready" not in st.session_state:
@@ -998,9 +1004,9 @@ with st.sidebar:
 # EMBEDDINGS + LLM HELPERS
 # =====================================================
 def _get_azure_client() -> AzureOpenAI:
-    endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT", "").strip()
-    api_version = os.environ.get("AZURE_OPENAI_API_VERSION", "").strip()
-    api_key = os.environ.get("AZURE_OPENAI_API_KEY", "").strip() or os.environ.get("API_KEY", "").strip()
+    endpoint = st.secrets["AZURE_OPENAI_ENDPOINT"]
+    api_version = st.secrets["AZURE_OPENAI_API_VERSION"]
+    api_key = st.secrets["OPENAI_API_KEY"]
     shortcode = os.environ.get("SHORTCODE", "").strip()
     if not endpoint or not api_version or not api_key:
         raise RuntimeError("Missing AZURE_OPENAI_ENDPOINT / AZURE_OPENAI_API_VERSION / AZURE_OPENAI_API_KEY (or API_KEY).")
