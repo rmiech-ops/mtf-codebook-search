@@ -23,13 +23,27 @@ import streamlit.components.v1 as components
 import yaml
 import numpy as np
 from openai import AzureOpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
+
+def get_secret(name: str) -> str:
+    if name in st.secrets:
+        return st.secrets[name]
+    value = os.getenv(name)
+    if value is None:
+        raise KeyError(f"Missing required secret: {name}")
+    return value
+
+api_key = get_secret("OPENAI_API_KEY")
+endpoint = get_secret("AZURE_OPENAI_ENDPOINT")
+api_version = get_secret("AZURE_OPENAI_API_VERSION")
 
 client = AzureOpenAI(
     api_key=api_key,
     api_version=api_version,
     azure_endpoint=endpoint
 )
-from dotenv import load_dotenv
 
 if "system_ready" not in st.session_state:
     st.session_state.system_ready = False
