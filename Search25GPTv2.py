@@ -27,6 +27,85 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# =====================================================
+# AI CALL GUARDRAILS
+# =====================================================
+MAX_CALLS_PER_SESSION = 8
+MIN_SECONDS_BETWEEN_CALLS = 15
+MAX_PROMPT_CHARS = 800
+
+if "api_call_count" not in st.session_state:
+    st.session_state.api_call_count = 0
+
+if "last_api_call_ts" not in st.session_state:
+    st.session_state.last_api_call_ts = 0.0
+
+if "seen_prompt_hashes" not in st.session_state:
+    st.session_state.seen_prompt_hashes = set()
+
+def show_limit_message(reason, wait_seconds=None):
+    if reason == "too_fast":
+        if wait_seconds is not None and wait_seconds > 0:
+            st.warning(
+                f"Please wait {wait_seconds} seconds before running another AI-assisted search."
+            )
+        else:
+            st.warning("Please wait a few seconds before running another AI-assisted search.")
+        st.info("You can still use Exact Word Search and filters while you wait.")
+
+    elif reason == "session_limit":
+        st.warning("You’ve reached the AI-assisted search limit for this session.")
+        st.info("You can continue using Exact Word Search and filters, or come back later and try again.")
+
+    elif reason == "prompt_too_long":
+        st.warning("Your search is too long.")
+        st.info("Please shorten it to one main question or a few keywords, then try again.")
+
+    elif reason == "duplicate":
+        st.warning("That search was already run recently.")
+        st.info("Please revise the wording or wait a moment before trying again.")
+
+    else:
+        st.warning("AI-assisted search is temporarily unavailable.")
+        st.info("Please try again shortly, or use Exact Word Search in the meantime.")
+
+def can_call_api(prompt: str) -> bool:
+    now = time.time()
+    prompt = (prompt or "").strip()
+
+    if st.session_state.api_call_count >= MAX_CALLS_PER_SESSION:
+        show_limit_message("session_limit")
+        return False
+
+    elapsed = now - st.session_state.last_api_call_ts
+    if elapsed < MIN_SECONDS_BETWEEN_CALLS:
+        remaining = int(MIN_SECONDS_BETWEEN_CALLS - elapsed)
+        if remaining < 1:
+            remaining = 1
+        show_limit_message("too_fast", wait_seconds=remaining)
+        return False
+
+    if len(prompt) > MAX_PROMPT_CHARS:
+        show_limit_message("prompt_too_long")
+        return False
+
+    h = hashlib.sha256(prompt.lower().encode()).hexdigest()
+    if h in st.session_state.seen_prompt_hashes:
+        show_limit_message("duplicate")
+        return False
+
+    return True
+
+def guard_ai_call(prompt: str):
+    if not can_call_api(prompt):
+        st.stop()
+
+def mark_ai_call_success(prompt: str):
+    h = hashlib.sha256((prompt or "").strip().lower().encode()).hexdigest()
+    st.session_state.api_call_count += 1
+    st.session_state.last_api_call_ts = time.time()
+    st.session_state.seen_prompt_hashes.add(h)
+
 def get_secret(name: str) -> str:
     if name in st.secrets:
         return st.secrets[name]
@@ -1040,6 +1119,8 @@ def llm_expand_for_lexical_rerank(user_query: str, chat_deployment: str) -> Dict
     dep = (chat_deployment or "").strip()
     if not q or not dep:
         return {"terms": [], "phrases": []}
+
+    guard_ai_call(q)
     client = _get_azure_client()
     system = (
         "You expand a search query for searching survey QUESTION_TEXT. "
@@ -1059,6 +1140,7 @@ def llm_expand_for_lexical_rerank(user_query: str, chat_deployment: str) -> Dict
         temperature=0.2,
         max_tokens=250,
     )
+    mark_ai_call_success(q)
     txt = (resp.choices[0].message.content or "").strip()
     txt = re.sub(r"^```json\s*|\s*```$", "", txt.strip(), flags=re.I)
     try:
