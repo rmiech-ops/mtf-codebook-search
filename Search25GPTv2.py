@@ -80,7 +80,7 @@ for p in env_paths:
 # PAGE CONFIG
 # =====================================================
 st.set_page_config(
-    page_title="MTF Codebook Search",
+    page_title="MTF School Surveys Codebook Search",
     layout="wide",
     initial_sidebar_state="expanded",
 )
