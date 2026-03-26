@@ -25,6 +25,8 @@ import numpy as np
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 
+st.warning("DEBUG: AI search path reached")
+
 load_dotenv()
 
 def get_secret(name: str) -> str:
