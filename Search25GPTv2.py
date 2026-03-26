@@ -25,7 +25,7 @@ import numpy as np
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 
-st.warning("DEBUG: AI search path reached")
+st.sidebar.write("DEBUG")
 
 load_dotenv()
 
