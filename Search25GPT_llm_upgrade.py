@@ -6,9 +6,114 @@
 import json
 import os
 import re
+import time
+import hashlib
 from typing import Dict, List, Optional
 
+import streamlit as st
 from openai import AzureOpenAI
+
+
+# -------------------------
+# CONFIGURATION
+# -------------------------
+MAX_CALLS_PER_SESSION = 5
+MIN_SECONDS_BETWEEN_CALLS = 15
+MAX_PROMPT_CHARS = 800
+
+
+# -------------------------
+# SESSION STATE INIT
+# -------------------------
+if "api_call_count" not in st.session_state:
+    st.session_state.api_call_count = 0
+
+if "last_api_call_ts" not in st.session_state:
+    st.session_state.last_api_call_ts = 0.0
+
+if "seen_prompt_hashes" not in st.session_state:
+    st.session_state.seen_prompt_hashes = set()
+
+
+# -------------------------
+# USER MESSAGE HANDLER
+# -------------------------
+def show_limit_message(reason, wait_seconds=None):
+    if reason == "too_fast":
+        if wait_seconds is not None and wait_seconds > 0:
+            st.warning(
+                f"Please wait {wait_seconds} seconds before running another AI-assisted search."
+            )
+        else:
+            st.warning(
+                "Please wait a few seconds before running another AI-assisted search."
+            )
+        st.info("You can still use Exact Word Search and filters while you wait.")
+
+    elif reason == "session_limit":
+        st.warning("You’ve reached the AI-assisted search limit for this session.")
+        st.info(
+            "You can continue using Exact Word Search and filters, or come back later and try again."
+        )
+
+    elif reason == "prompt_too_long":
+        st.warning("Your search is too long.")
+        st.info(
+            "Please shorten it to one main question or a few keywords (about 1–2 sentences)."
+        )
+
+    elif reason == "duplicate":
+        st.warning("That search was already run recently.")
+        st.info("Please revise the wording or wait a moment before trying again.")
+
+    else:
+        st.warning("AI-assisted search is temporarily unavailable.")
+        st.info(
+            "Please try again shortly, or use Exact Word Search in the meantime."
+        )
+
+
+# -------------------------
+# GUARDRAIL FUNCTIONS
+# -------------------------
+def can_call_api(prompt: str) -> bool:
+    now = time.time()
+    prompt = prompt or ""
+
+    if st.session_state.api_call_count >= MAX_CALLS_PER_SESSION:
+        show_limit_message("session_limit")
+        return False
+
+    elapsed = now - st.session_state.last_api_call_ts
+    if elapsed < MIN_SECONDS_BETWEEN_CALLS:
+        remaining = int(MIN_SECONDS_BETWEEN_CALLS - elapsed)
+        if remaining < 1:
+            remaining = 1
+        show_limit_message("too_fast", wait_seconds=remaining)
+        return False
+
+    if len(prompt) > MAX_PROMPT_CHARS:
+        show_limit_message("prompt_too_long")
+        return False
+
+    h = hashlib.sha256(prompt.strip().lower().encode()).hexdigest()
+    if h in st.session_state.seen_prompt_hashes:
+        show_limit_message("duplicate")
+        return False
+
+    return True
+
+
+def guard_ai_call(prompt: str):
+    if not can_call_api(prompt):
+        st.stop()
+
+
+def mark_ai_call_success(prompt: str):
+    h = hashlib.sha256(prompt.strip().lower().encode()).hexdigest()
+    st.session_state.api_call_count += 1
+    st.session_state.last_api_call_ts = time.time()
+    st.session_state.seen_prompt_hashes.add(h)
 
 
 def _get_azure_client() -> AzureOpenAI:
@@ -70,6 +175,8 @@ def llm_build_search_plan(user_query: str) -> Dict[str, object]:
         return {}
 
     try:
+        guard_ai_call(q)
+
         client = _get_azure_client()
         chat_dep = os.environ.get("AZURE_OPENAI_CHAT_DEPLOYMENT", "").strip()
         if not chat_dep:
@@ -119,6 +226,8 @@ Return JSON only.
             max_tokens=350,
         )
 
+        mark_ai_call_success(q)
+
         txt = (resp.choices[0].message.content or "").strip()
         txt = re.sub(r"^```json\s*|\s*```$", "", txt, flags=re.I)
 
@@ -128,13 +237,23 @@ Return JSON only.
 
         return {
             "scale": plan.get("scale"),
-            "entity": _clean_str_list(plan.get("entity", []), maxn=10, allow_phrases=True),
+            "entity": _clean_str_list(
+                plan.get("entity", []), maxn=10, allow_phrases=True
+            ),
             "role": plan.get("role"),
             "timeframe": plan.get("timeframe"),
-            "include_terms": _clean_str_list(plan.get("include_terms", []), maxn=12, allow_phrases=False),
-            "include_phrases": _clean_str_list(plan.get("include_phrases", []), maxn=12, allow_phrases=True),
-            "exclude_terms": _clean_str_list(plan.get("exclude_terms", []), maxn=12, allow_phrases=True),
-            "subject_hints": _clean_str_list(plan.get("subject_hints", []), maxn=8, allow_phrases=True),
+            "include_terms": _clean_str_list(
+                plan.get("include_terms", []), maxn=12, allow_phrases=False
+            ),
+            "include_phrases": _clean_str_list(
+                plan.get("include_phrases", []), maxn=12, allow_phrases=True
+            ),
+            "exclude_terms": _clean_str_list(
+                plan.get("exclude_terms", []), maxn=12, allow_phrases=True
+            ),
+            "subject_hints": _clean_str_list(
+                plan.get("subject_hints", []), maxn=8, allow_phrases=True
+            ),
         }
 
     except Exception:
