@@ -13,10 +13,12 @@ from typing import Dict, List, Optional
 import streamlit as st
 from openai import AzureOpenAI
 
+from Search25GPTv2 import guard_ai_call, mark_ai_call_success
+
 # -------------------------
 # CONFIGURATION
 # -------------------------
-MAX_CALLS_PER_SESSION = 5
+MAX_CALLS_PER_SESSION = 12
 MIN_SECONDS_BETWEEN_CALLS = 15
 MAX_PROMPT_CHARS = 800
 
@@ -50,7 +52,7 @@ def show_limit_message(reason, wait_seconds=None):
         st.info("You can still use Exact Word Search and filters while you wait.")
 
     elif reason == "session_limit":
-        st.warning("You’ve reached the AI-assisted search limit for this session.")
+        st.warning("Youve reached the AI-assisted search limit for this session.")
         st.info(
             "You can continue using Exact Word Search and filters, or come back later and try again."
         )
@@ -58,7 +60,7 @@ def show_limit_message(reason, wait_seconds=None):
     elif reason == "prompt_too_long":
         st.warning("Your search is too long.")
         st.info(
-            "Please shorten it to one main question or a few keywords (about 1–2 sentences)."
+            "Please shorten it to one main question or a few keywords (about 1 to 2 sentences)."
         )
 
     elif reason == "duplicate":
@@ -292,3 +294,4 @@ def enhanced_parse(
         "exclude_terms": plan.get("exclude_terms", []),
         "subject_hints": plan.get("subject_hints", []),
     }
+    
