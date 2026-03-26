@@ -13,8 +13,6 @@ from typing import Dict, List, Optional
 import streamlit as st
 from openai import AzureOpenAI
 
-raise RuntimeError("DEBUG: This file is being used")
-
 # -------------------------
 # CONFIGURATION
 # -------------------------
