@@ -13,7 +13,7 @@ from typing import Dict, List, Optional
 import streamlit as st
 from openai import AzureOpenAI
 
-st.warning("DEBUG: Search25GPT_llm_upgrade.py is loaded")
+st.sidebar.write("DEBUG")
 
 # -------------------------
 # CONFIGURATION
