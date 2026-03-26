@@ -13,7 +13,7 @@ from typing import Dict, List, Optional
 import streamlit as st
 from openai import AzureOpenAI
 
-st.sidebar.write("DEBUG")
+rasie RuntimeError("DEBUG: This file is being used")
 
 # -------------------------
 # CONFIGURATION
