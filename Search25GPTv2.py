@@ -127,7 +127,7 @@ div[data-testid="stTextInput"] input {
 </style>
 """, unsafe_allow_html=True)
 
-st.title("MTF Codebook Search")
+st.title("MTF School Surveys Codebook Search")
 
 st.markdown("""
 <style>
