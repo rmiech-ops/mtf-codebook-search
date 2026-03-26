@@ -25,8 +25,6 @@ import numpy as np
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 
-st.sidebar.write("DEBUG")
-
 load_dotenv()
 
 def get_secret(name: str) -> str:
