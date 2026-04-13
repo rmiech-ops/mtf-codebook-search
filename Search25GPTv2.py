@@ -698,6 +698,10 @@ def parse_search_terms(query: str, phrase_mode=True):
 # =====================================================
 def render_wrapped_html_table(df_in: pd.DataFrame, height_px: int = 800) -> None:
     df = df_in.copy()
+    # Force every column to object/string dtype before any assignment.
+    # Prevents TypeError when pandas infers numeric dtypes for year/flag columns.
+    for col in df.columns:
+        df[col] = df[col].astype(object)
     for i, col in enumerate(df.columns):
         s = df.iloc[:, i].astype(str)
         s = s.str.replace(r"\\n", " ", regex=True)
