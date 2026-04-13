@@ -882,7 +882,7 @@ except FileNotFoundError:
 df = load_data(str(FILE_PATH), mtime)
 
 expected_cols = [
-    "ITEMREFNO", "QNAME", "BRANCH", "FORM", "FIRST_YR", "LATEST_YR", "ORIGQ", "CHG_YR", "CHG_TYPE",
+    "ITEMREFNO", "QNAME", "BY_X_FU_X", "FORM", "FIRST_YR", "LATEST_YR", "ORIGQ", "CHG_YR", "CHG_TYPE",
     "QUESTION_TEXT", "CATEGORY_TEXT", "VERSION", "VNUM_CONCAT", "VNUM_CONCAT_CORE",
     "SUBJ_1", "SUBJ_1_TEXT_LEV1", "SUBJ_1_TEXT_LEV2", "SUBJ_1_TEXT_LEV3",
     "SUBJ_2", "SUBJ_2_TEXT_LEV1", "SUBJ_2_TEXT_LEV2", "SUBJ_2_TEXT_LEV3",
@@ -1748,7 +1748,7 @@ def apply_filters_cached(
                 filtered = filtered[mask]
 
     if selected_grades:
-        filtered = filtered[filtered["BRANCH"].astype(str).isin(list(selected_grades))]
+        filtered = filtered[filtered["BY_X_FU_X"].astype(str).isin(list(selected_grades))]
     if selected_forms:
         filtered = filtered[filtered["FORM"].astype(str).isin(list(selected_forms))]
     if irn:
@@ -1813,7 +1813,7 @@ safe_df = make_arrow_safe(safe_df)
 safe_df = safe_df.rename(columns={
     "ITEMREFNO": "irn",
     "QNAME": "variable_label",
-    "BRANCH": "grade",
+    "BY_X_FU_X": "grade",
     "FORM": "form",
     "FIRST_YR": "first_yr",
     "LATEST_YR": "latest_yr",
