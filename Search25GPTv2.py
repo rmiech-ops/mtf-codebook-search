@@ -1788,7 +1788,6 @@ def apply_filters_cached(
 
     return filtered, debug
 
-
 filtered, ai_debug = apply_filters_cached(
     str(FILE_PATH),
     mtime,
@@ -1810,8 +1809,6 @@ filtered, ai_debug = apply_filters_cached(
 # st.cache_data round-trips through Arrow which re-infers numeric dtypes.
 for _col in filtered.columns:
     filtered[_col] = filtered[_col].astype(object)
-
-DROP_COLS = [
 
 DROP_COLS = [
     "FIRST_YR_NUM", "LATEST_YR_NUM", "WEB", "RESPCAT_ID", "VNUM", "VERS_ORIG",
