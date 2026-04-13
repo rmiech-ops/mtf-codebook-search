@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 # =====================================================
 # MTF Codebook Streamlit Browser -- Accessible Version + AI Search Gating
@@ -26,26 +25,6 @@ import numpy as np
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 
-load_dotenv()
-
-def get_secret(name: str) -> str:
-    if name in st.secrets:
-        return st.secrets[name]
-    value = os.getenv(name)
-    if value is None:
-        raise KeyError(f"Missing required secret: {name}")
-    return value
-
-api_key = get_secret("OPENAI_API_KEY")
-endpoint = get_secret("AZURE_OPENAI_ENDPOINT")
-api_version = get_secret("AZURE_OPENAI_API_VERSION")
-
-client = AzureOpenAI(
-    api_key=api_key,
-    api_version=api_version,
-    azure_endpoint=endpoint
-)
-
 if "system_ready" not in st.session_state:
     st.session_state.system_ready = False
 
@@ -66,7 +45,6 @@ BASE_DIR = app_base_dir()
 # =====================================================
 # LOAD SECRETS / .ENV
 # =====================================================
-import streamlit as st
 
 def load_secrets():
     """Load secrets from Streamlit Cloud, or fall back to local .env file."""
@@ -1045,9 +1023,9 @@ with st.sidebar:
 # EMBEDDINGS + LLM HELPERS
 # =====================================================
 def _get_azure_client() -> AzureOpenAI:
-    endpoint = st.secrets["AZURE_OPENAI_ENDPOINT"]
-    api_version = st.secrets["AZURE_OPENAI_API_VERSION"]
-    api_key = st.secrets["OPENAI_API_KEY"]
+    endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT", "").strip()
+    api_version = os.environ.get("AZURE_OPENAI_API_VERSION", "").strip()
+    api_key = os.environ.get("AZURE_OPENAI_API_KEY", "").strip() or os.environ.get("OPENAI_API_KEY", "").strip() or os.environ.get("API_KEY", "").strip()
     shortcode = os.environ.get("SHORTCODE", "").strip()
     if not endpoint or not api_version or not api_key:
         raise RuntimeError("Missing AZURE_OPENAI_ENDPOINT / AZURE_OPENAI_API_VERSION / AZURE_OPENAI_API_KEY (or API_KEY).")
