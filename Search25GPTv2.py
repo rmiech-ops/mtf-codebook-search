@@ -267,7 +267,12 @@ def load_yaml_records(path: Path):
 def load_data(path_str: str, mtime: float) -> pd.DataFrame:
     path = Path(path_str)
     recs = load_yaml_records(path)
-    return pd.DataFrame.from_records(recs)
+    df = pd.DataFrame.from_records(recs)
+    # Force all columns to string dtype so pandas never infers numeric
+    # types that would cause TypeError when the renderer assigns strings.
+    for col in df.columns:
+        df[col] = df[col].astype(str)
+    return df
 
 
 def make_arrow_safe(df: pd.DataFrame) -> pd.DataFrame:
