@@ -1806,6 +1806,13 @@ filtered, ai_debug = apply_filters_cached(
     int(AI_MAX_HITS_TARGET_DEFAULT),
 )
 
+# Re-cast all columns to object after cache deserialization.
+# st.cache_data round-trips through Arrow which re-infers numeric dtypes.
+for _col in filtered.columns:
+    filtered[_col] = filtered[_col].astype(object)
+
+DROP_COLS = [
+
 DROP_COLS = [
     "FIRST_YR_NUM", "LATEST_YR_NUM", "WEB", "RESPCAT_ID", "VNUM", "VERS_ORIG",
     "__BLOB_NORM", "__QTEXT_NORM", "__CAT_NORM", "__SCALE", "__CAT_SIG",
