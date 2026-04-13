@@ -64,18 +64,34 @@ def app_base_dir() -> Path:
 BASE_DIR = app_base_dir()
 
 # =====================================================
-# LOAD .ENV
+# LOAD SECRETS / .ENV
 # =====================================================
-env_paths = [
-    BASE_DIR / ".env",
-    Path.cwd() / ".env",
-    (Path(sys.executable).resolve().parent / ".env") if getattr(sys, "frozen", False) else None,
-]
-for p in env_paths:
-    if p and p.exists():
-        load_dotenv(dotenv_path=p, override=True)
-        break
+import streamlit as st
 
+def load_secrets():
+    """Load secrets from Streamlit Cloud, or fall back to local .env file."""
+    try:
+        # Check if running on Streamlit Cloud (secrets will be non-empty)
+        if st.secrets:
+            import os
+            for key, value in st.secrets.items():
+                os.environ[key] = str(value)
+            return  # Done — secrets loaded
+    except Exception:
+        pass  # Not on Streamlit Cloud, fall through to .env
+
+    # Fall back to local .env file
+    env_paths = [
+        BASE_DIR / ".env",
+        Path.cwd() / ".env",
+        (Path(sys.executable).resolve().parent / ".env") if getattr(sys, "frozen", False) else None,
+    ]
+    for p in env_paths:
+        if p and p.exists():
+            load_dotenv(dotenv_path=p, override=True)
+            break
+
+load_secrets()
 # =====================================================
 # PAGE CONFIG
 # =====================================================
