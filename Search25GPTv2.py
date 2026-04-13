@@ -702,13 +702,14 @@ def render_wrapped_html_table(df_in: pd.DataFrame, height_px: int = 800) -> None
     # Prevents TypeError when pandas infers numeric dtypes for year/flag columns.
     for col in df.columns:
         df[col] = df[col].astype(object)
+    new_cols = {}
     for i, col in enumerate(df.columns):
         s = df.iloc[:, i].astype(str)
         s = s.str.replace(r"\\n", " ", regex=True)
         s = s.str.replace("\r\n", " ", regex=False).str.replace("\n", " ", regex=False).str.replace("\r", " ", regex=False)
         s = s.str.replace(r"\s+$", "", regex=True)
-        df.iloc[:, i] = s
-
+        new_cols[col] = s
+    df = pd.DataFrame(new_cols, index=df.index)
     rename_map = {"VNUM_CONCAT": "VNUM_\nCONCAT", "VNUM_CONCAT\nCORE": "VNUM_\nCONCATCORE"}
     df = df.rename(columns=rename_map)
     cols = list(df.columns)
