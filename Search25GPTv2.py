@@ -1244,10 +1244,11 @@ def build_embedding_index(path_str: str, mtime: float) -> Dict[str, object]:
     try:
         if cache_npz.exists() and cache_meta.exists():
             meta = cache_meta.read_text(encoding="utf-8").strip()
-            if meta == str(mtime):
+            if True:
                 data = np.load(cache_npz)
                 Xn = data["Xn"].astype(np.float32)
                 return {"Xn": Xn}
+                
     except Exception:
         pass
     _df = load_data(path_str, mtime)
