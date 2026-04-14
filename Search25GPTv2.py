@@ -43,6 +43,14 @@ def app_base_dir() -> Path:
 BASE_DIR = app_base_dir()
 
 # =====================================================
+# PAGE CONFIG
+# =====================================================
+st.set_page_config(
+    page_title="MTF School Surveys Codebook Search",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+# =====================================================
 # LOAD SECRETS / .ENV
 # =====================================================
 
@@ -70,14 +78,6 @@ def load_secrets():
             break
 
 load_secrets()
-# =====================================================
-# PAGE CONFIG
-# =====================================================
-st.set_page_config(
-    page_title="MTF School Surveys Codebook Search",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
 
 # =====================================================
 # ACCESSIBILITY CSS
