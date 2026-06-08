@@ -179,7 +179,7 @@ else:
 # GRADE LABELS
 # =====================================================
 GRADE_CODE_TO_FILTER_LABEL = {
-    "BX": "Grades 8 & 10",
+    "BX": "Grades 8 & 10 test",
     "BY": "Grade 12",
 }
 
