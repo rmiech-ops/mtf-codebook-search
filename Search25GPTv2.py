@@ -5,6 +5,11 @@
 # UI/startup behavior merged from prior UI version
 # AI search simplified to broad retrieval + ranking (less brittle)
 # ASCII only, Emacs safe, unique widget keys
+#
+# ACCESSIBILITY CHANGE: In accessible view, grade and form filters are
+# rendered as labelled st.checkbox widgets instead of st.multiselect,
+# so that every control has a meaningful, screen-reader-visible label.
+# The standard (non-accessible) view is unchanged.
 # =====================================================
 
 import os
@@ -50,6 +55,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
 # =====================================================
 # LOAD SECRETS / .ENV
 # =====================================================
@@ -57,16 +63,14 @@ st.set_page_config(
 def load_secrets():
     """Load secrets from Streamlit Cloud, or fall back to local .env file."""
     try:
-        # Check if running on Streamlit Cloud (secrets will be non-empty)
         if st.secrets:
             import os
             for key, value in st.secrets.items():
                 os.environ[key] = str(value)
-            return  # Done — secrets loaded
+            return
     except Exception:
-        pass  # Not on Streamlit Cloud, fall through to .env
+        pass
 
-    # Fall back to local .env file
     env_paths = [
         BASE_DIR / ".env",
         Path.cwd() / ".env",
@@ -169,7 +173,7 @@ if "startup_done" in st.session_state:
     st.caption(
         "Tip: Use AI-assisted search to find relevant questions. "
         "Then use Exact Word Search (upper left) with a distinctive phrase "
-        "from the survey question text—or the other filters—to locate that question "
+        "from the survey question text--or the other filters--to locate that question "
         "and related ones across the codebooks."
     )
 else:
@@ -262,8 +266,6 @@ def load_data(path_str: str, mtime: float) -> pd.DataFrame:
     path = Path(path_str)
     recs = load_yaml_records(path)
     df = pd.DataFrame.from_records(recs)
-    # Force all columns to string dtype so pandas never infers numeric
-    # types that would cause TypeError when the renderer assigns strings.
     for col in df.columns:
         df[col] = df[col].astype(str)
     return df
@@ -692,8 +694,6 @@ def parse_search_terms(query: str, phrase_mode=True):
 # =====================================================
 def render_wrapped_html_table(df_in: pd.DataFrame, height_px: int = 800) -> None:
     df = df_in.copy()
-    # Force every column to object/string dtype before any assignment.
-    # Prevents TypeError when pandas infers numeric dtypes for year/flag columns.
     for col in df.columns:
         df[col] = df[col].astype(object)
     new_cols = {}
@@ -958,8 +958,28 @@ for k, v in {
 ENTITY_LEXICON = build_entity_lexicon(str(FILE_PATH), mtime)
 AI_MAX_HITS_TARGET_DEFAULT = 60
 
+# =====================================================
+# SIDEBAR
+# The accessible view toggle lives at the TOP of the
+# sidebar so that its value is known before we render
+# the grade/form filter widgets.  When accessible_view
+# is True the grade and form filters are rendered as
+# individual st.checkbox widgets (each with a fully
+# descriptive label) instead of st.multiselect (whose
+# remove-tag buttons carry no meaningful ARIA label).
+# =====================================================
+
 with st.sidebar:
     st.header("Filters")
+
+    # --------------------------------------------------
+    # Accessible-view toggle  (moved to top of sidebar)
+    # --------------------------------------------------
+    accessible_view = st.toggle(
+        "Accessible view",
+        value=False,
+        key="ui_accessible_view_sidebar",
+    )
 
     search_query = st.text_input(
         "Exact word search (no AI assistance)",
@@ -988,10 +1008,63 @@ with st.sidebar:
                 key="ui_phrase_mode",
             )
 
-    grade_options_labels = [GRADE_CODE_TO_FILTER_LABEL["BY"], GRADE_CODE_TO_FILTER_LABEL["BX"]]
-    selected_grade_labels = st.multiselect("Grade", options=grade_options_labels, default=grade_options_labels, key="ui_grade_labels")
+    # --------------------------------------------------
+    # Grade filter
+    # Standard view: multiselect (compact, visual tags)
+    # Accessible view: one labelled checkbox per grade
+    # --------------------------------------------------
+    ALL_GRADE_LABELS = [
+        GRADE_CODE_TO_FILTER_LABEL["BY"],   # "Grade 12"
+        GRADE_CODE_TO_FILTER_LABEL["BX"],   # "Grades 8 & 10"
+    ]
+
+    if accessible_view:
+        st.markdown("**Grade**")
+        st.caption("Select one or more grades to include in results.")
+        grade_checks: Dict[str, bool] = {}
+        for lbl in ALL_GRADE_LABELS:
+            grade_checks[lbl] = st.checkbox(
+                lbl,
+                value=True,
+                key=f"ui_grade_check_{lbl.replace(' ', '_').replace('&', 'and')}",
+            )
+        selected_grade_labels = [lbl for lbl, checked in grade_checks.items() if checked]
+    else:
+        selected_grade_labels = st.multiselect(
+            "Grade",
+            options=ALL_GRADE_LABELS,
+            default=ALL_GRADE_LABELS,
+            key="ui_grade_labels",
+        )
+
     selected_grades = [GRADE_LABEL_TO_CODE.get(lbl, lbl) for lbl in selected_grade_labels]
-    selected_forms = st.multiselect("Form (include)", options=[str(i) for i in range(1, 7)], default=[str(i) for i in range(1, 7)], key="ui_forms")
+
+    # --------------------------------------------------
+    # Form filter
+    # Standard view: multiselect
+    # Accessible view: one labelled checkbox per form
+    # --------------------------------------------------
+    ALL_FORM_OPTIONS = [str(i) for i in range(1, 7)]
+
+    if accessible_view:
+        st.markdown("**Form (include)**")
+        st.caption("Select one or more forms to include in results.")
+        form_checks: Dict[str, bool] = {}
+        for f in ALL_FORM_OPTIONS:
+            form_checks[f] = st.checkbox(
+                f"Form {f}",
+                value=True,
+                key=f"ui_form_check_{f}",
+            )
+        selected_forms = [f for f, checked in form_checks.items() if checked]
+    else:
+        selected_forms = st.multiselect(
+            "Form (include)",
+            options=ALL_FORM_OPTIONS,
+            default=ALL_FORM_OPTIONS,
+            key="ui_forms",
+        )
+
     irn = st.text_input("Question ID", key="ui_irn")
     vnum_concat = st.text_input("VNUM_CONCAT exact", key="ui_vnum_concat")
     vnum_concat_core = st.text_input("VNUM_CONCAT_CORE exact", key="ui_vnum_concat_core")
@@ -1248,7 +1321,7 @@ def build_embedding_index(path_str: str, mtime: float) -> Dict[str, object]:
                 data = np.load(cache_npz)
                 Xn = data["Xn"].astype(np.float32)
                 return {"Xn": Xn}
-                
+
     except Exception:
         pass
     _df = load_data(path_str, mtime)
@@ -1506,7 +1579,7 @@ if PREWARM and "startup_done" not in st.session_state:
         )
 if "startup_done" not in st.session_state:
     st.session_state.startup_done = True
-    st.rerun() 
+    st.rerun()
 
 @st.cache_data(show_spinner=False)
 def apply_filters_cached(
@@ -1802,8 +1875,6 @@ filtered, ai_debug = apply_filters_cached(
     int(AI_MAX_HITS_TARGET_DEFAULT),
 )
 
-# Re-cast all columns to object after cache deserialization.
-# st.cache_data round-trips through Arrow which re-infers numeric dtypes.
 for _col in filtered.columns:
     filtered[_col] = filtered[_col].astype(object)
 
@@ -1889,8 +1960,7 @@ has_id = bool(str(irn or "").strip() or str(vnum_concat or "").strip() or str(vn
 grade_changed = set(tuple(selected_grades)) != set(("BY", "BX"))
 form_changed = set(tuple(selected_forms)) != set(tuple(str(i) for i in range(1, 7)))
 year_filter_on = (first_range is not None) or (latest_range is not None)
-has_any_filter_intent = bool(has_id or grade_changed or form_changed or year_filter_on)
-has_search_intent = bool(has_ai or has_lit or has_any_filter_intent)
+has_search_intent = bool(has_ai or has_lit or has_id or grade_changed or form_changed or year_filter_on)
 
 st.markdown('<div id="results"></div>', unsafe_allow_html=True)
 total = len(safe_df_pretty)
@@ -1900,12 +1970,8 @@ results_left, results_right = st.columns([0.85, 0.15])
 with results_left:
     st.subheader("Results")
 
-with results_right:
-    accessible_view = st.toggle(
-        "Accessible view",
-        value=False,
-        key="ui_accessible_view"
-    )
+# Note: the accessible_view toggle is now in the sidebar (top), so we
+# do NOT render a second toggle here in the results header area.
 
 if has_search_intent:
     if ai_debug.get("used_ai"):
@@ -1931,6 +1997,15 @@ else:
     start = 0
     end = 0
     page_df = safe_df_pretty.copy()
+
+# =====================================================
+# RESULTS RENDERING
+# accessible_view is now read from sidebar state.
+# When True: expandable list with fully labelled
+#   st.checkbox filters in the sidebar (no multiselect
+#   remove-tag buttons, no unlabelled x controls).
+# When False: the original sortable HTML table.
+# =====================================================
 
 if accessible_view:
     st.caption("Accessible list view: each result is an expandable, structured block.")
