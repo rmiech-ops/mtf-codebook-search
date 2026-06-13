@@ -887,7 +887,7 @@ df = load_data(str(FILE_PATH), mtime)
 
 expected_cols = [
     "ITEMREFNO", "QNAME", "BY_X_FU_X", "FORM", "FIRST_YR", "LATEST_YR", "ORIGQ", "CHG_YR", "CHG_TYPE",
-    "QUESTION_TEXT", "CATEGORY_TEXT", "VERSION", "VNUM_CONCAT", "VNUM_CONCAT_CORE",
+    "QUESTION_TEXT", "CATEGORY_TEXT", "VERSION", "VNUM", "VNUM_CONCAT", "VNUM_CONCAT_CORE",
     "SUBJ_1", "SUBJ_1_TEXT_LEV1", "SUBJ_1_TEXT_LEV2", "SUBJ_1_TEXT_LEV3",
     "SUBJ_2", "SUBJ_2_TEXT_LEV1", "SUBJ_2_TEXT_LEV2", "SUBJ_2_TEXT_LEV3",
     "SUBJ_3", "SUBJ_3_TEXT_LEV1", "SUBJ_3_TEXT_LEV2", "SUBJ_3_TEXT_LEV3",
@@ -1879,7 +1879,7 @@ for _col in filtered.columns:
     filtered[_col] = filtered[_col].astype(object)
 
 DROP_COLS = [
-    "FIRST_YR_NUM", "LATEST_YR_NUM", "WEB", "RESPCAT_ID", "VNUM", "VERS_ORIG",
+    "FIRST_YR_NUM", "LATEST_YR_NUM", "WEB", "RESPCAT_ID", "VERS_ORIG",
     "__BLOB_NORM", "__QTEXT_NORM", "__CAT_NORM", "__SCALE", "__CAT_SIG",
     "__SUBJ_1_L1", "__SUBJ_1_L2", "__SUBJ_1_L3",
     "__SUBJ_2_L1", "__SUBJ_2_L2", "__SUBJ_2_L3",
@@ -1905,6 +1905,7 @@ safe_df = safe_df.rename(columns={
     "QUESTION_TEXT": "question_text",
     "CATEGORY_TEXT": "response_categories",
     "VERSION": "version",
+    "VNUM": "vnum",
     "VNUM_CONCAT": "vnum_concat",
     "VNUM_CONCAT_CORE": "vnum_concat_core",
 })
@@ -1928,6 +1929,7 @@ preferred_order = [
     "question_text",
     "response_categories",
     "version",
+    "vnum",
     "vnum_concat",
     "vnum_concat_core",
 ]
@@ -1948,6 +1950,7 @@ PRETTY_COLS = {
     "question_text": "Question\ntext",
     "response_categories": "Response\nCategories",
     "version": "Version",
+    "vnum": "VNUM",
     "vnum_concat": "VNUM_CONCAT",
     "vnum_concat_core": "VNUM_CONCAT\nCORE",
 }
