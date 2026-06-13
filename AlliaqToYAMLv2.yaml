@@ -1,4 +1,4 @@
-# AlliaqToYAMLv3 - Generated 5/17/2026 6:55:27 PM
+# AlliaqToYAMLv3 - Generated 6/13/2026 6:43:00 AM
 - ITEMREFNO: '01190'
   BY_X_FU_X: 'BX'
   QNAME: 'VRY HPY THS DAYS'
@@ -193346,762 +193346,6 @@
   CHG_TYPE: 'R'
   CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
   QUESTION_TEXT: --
-- ITEMREFNO: '30065'
-  BY_X_FU_X: 'BX'
-  QNAME: 'USUAL CIG BRAND'
-  FORM: '1'
-  VERSION: --
-  RESPCAT: 'CIGBRANDS(1-26)'
-  FIRST_YR: 1998
-  LATEST_YR: 2023
-  VNUM_CONCAT: '7176'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01l'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Kinds of drugs'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2013
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '26="American Spirit" 1="Basic" 2="Benson & Hedges" 3="Black & Whites" 4="Cambridge" 5="Camel" 6="Capri" 7="Carlton" 8="Doral" 9="GPC" 10="Kent" 11="Kool" 12="Marlboro" 13="Merit" 14="Misty" 15="Monarch" 16="More" 17="Newport" 18="Pall Mall" 19="Parliament'
-  QUESTION_TEXT: --
-- ITEMREFNO: '00310'
-  BY_X_FU_X: 'BX'
-  QNAME: 'FATHR EDUC LEVEL'
-  FORM: '2'
-  VERSION: '2'
-  RESPCAT: 'SCHOOLING(1-7)'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7215'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'R02'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Family characteristics'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2018
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '1="Completed grade school or less" 2="Some high school" 3="Completed high school" 4="Some college" 5="Completed college" 6="Graduate or professional school after college" 7="Don''t know, or does not apply"'
-  QUESTION_TEXT: 'The next two questions ask about your parents. If you were raised mostly by foster parents, stepparents, or others, answer for them. For example, if you have both a stepfather and a biological father, answer for the one that was most important in raising you.  What is the highest level of schooling your father completed?'
-- ITEMREFNO: '00630'
-  BY_X_FU_X: 'BX'
-  QNAME: '#X DATE 3+/WK'
-  FORM: '2'
-  VERSION: '5'
-  RESPCAT: 'NO_OF_DATES(1-6)'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7240'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'C07'
-  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
-  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: 'M01'
-  SUBJ_2_TEXT_LEV1: 'Interpersonal Relationships'
-  SUBJ_2_TEXT_LEV2: 'Dating'
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '1="Never" 2="Once a month or less" 3="2 or 3 times a month" 4="Once a week" 5="2 or 3 times a week" 6="Over 3 times a week"'
-  QUESTION_TEXT: 'On average, how often (if ever) do you go out with a date?'
-- ITEMREFNO: '22460'
-  BY_X_FU_X: 'BX'
-  QNAME: '#X SEE DRUG SPTS'
-  FORM: '2'
-  VERSION: '2'
-  RESPCAT: --
-  FIRST_YR: 1991
-  LATEST_YR: 2016
-  VNUM_CONCAT: '8401'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A10b'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Drug Education and Communication'
-  SUBJ_1_TEXT_LEV3: 'Education and communication in the mass media'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2016
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: --
-  QUESTION_TEXT: 'The next questions ask about anti-drug commercials or "spots" that are intended to discourage drug use. In recent months, about how often have you seen or heard such anti-drug commercials on TV, the internet or radio?'
-- ITEMREFNO: '00049'
-  BY_X_FU_X: 'BY'
-  QNAME: 'R''S RACE HI/OTPI'
-  FORM: '6'
-  VERSION: '2'
-  RESPCAT: 'MARK_ALL(0,1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6608'
-  VNUM_CONCAT_CORE: '2532'
-  SUBJ_1: 'R01'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
-  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Native Hawaiian or Other Pacific Islander'
-- ITEMREFNO: '22690'
-  BY_X_FU_X: 'BY'
-  QNAME: '#X STRD/LIFETIME'
-  FORM: '5'
-  VERSION: 'ANABOLTREAT'
-  RESPCAT: --
-  FIRST_YR: 2006
-  LATEST_YR: 2024
-  VNUM_CONCAT: '5527'
-  VNUM_CONCAT_CORE: '2493'
-  SUBJ_1: 'A01a'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Number of uses in lifetime'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2009
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: --
-  QUESTION_TEXT: 'Anabolic steroids are prescription drugs sometimes prescribed by doctors to treat certain conditions.  Some athletes, and others, have used them to try to increase muscle development.  On how many occasions (if any) have you taken steroids on your ownthat is, without a doctor telling you to take them. . .  . . . in your lifetime?'
-- ITEMREFNO: '22700'
-  BY_X_FU_X: 'BY'
-  QNAME: '#X STRD/LAST12MO'
-  FORM: '5'
-  VERSION: 'ANABOLTREAT'
-  RESPCAT: --
-  FIRST_YR: 2006
-  LATEST_YR: 2024
-  VNUM_CONCAT: '5528'
-  VNUM_CONCAT_CORE: '2494'
-  SUBJ_1: 'A01b'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Number of uses in last 12 months'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2009
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: --
-  QUESTION_TEXT: 'Anabolic steroids are prescription drugs sometimes prescribed by doctors to treat certain conditions.  Some athletes, and others, have used them to try to increase muscle development.  On how many occasions (if any) have you taken steroids on your ownthat is, without a doctor telling you to take them. . .  . . .  During the last 12 months?'
-- ITEMREFNO: '22710'
-  BY_X_FU_X: 'BY'
-  QNAME: '#X STRD/LAST30DA'
-  FORM: '5'
-  VERSION: 'ANABOLTREAT'
-  RESPCAT: --
-  FIRST_YR: 2006
-  LATEST_YR: 2024
-  VNUM_CONCAT: '5529'
-  VNUM_CONCAT_CORE: '2495'
-  SUBJ_1: 'A01c'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Number of uses in last 30 days'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2009
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: --
-  QUESTION_TEXT: 'Anabolic steroids are prescription drugs sometimes prescribed by doctors to treat certain conditions.  Some athletes, and others, have used them to try to increase muscle development.  On how many occasions (if any) have you taken steroids on your ownthat is, without a doctor telling you to take them. . .  . . .  During the last 30 days?'
-- ITEMREFNO: '05846'
-  BY_X_FU_X: 'BX'
-  QNAME: 'DALY MUSIC CNCRT'
-  FORM: '3'
-  VERSION: --
-  RESPCAT: 'EVRYDY-NVR(6-1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7310'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'C07'
-  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
-  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2018
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05846'
-  BY_X_FU_X: 'BX'
-  QNAME: 'DALY MUSIC CNCRT'
-  FORM: '4'
-  VERSION: --
-  RESPCAT: 'EVRYDY-NVR(6-1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7310'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'C07'
-  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
-  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2018
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05846'
-  BY_X_FU_X: 'BX'
-  QNAME: 'DALY MUSIC CNCRT'
-  FORM: '1'
-  VERSION: --
-  RESPCAT: 'EVRYDY-NVR(6-1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7310'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'C07'
-  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
-  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2018
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05846'
-  BY_X_FU_X: 'BX'
-  QNAME: 'DALY MUSIC CNCRT'
-  FORM: '2'
-  VERSION: --
-  RESPCAT: 'EVRYDY-NVR(6-1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7310'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'C07'
-  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
-  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2018
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05846'
-  BY_X_FU_X: 'BY'
-  QNAME: 'DALY MUSIC CNCRT'
-  FORM: '2'
-  VERSION: --
-  RESPCAT: 'EVRYDY-NVR(6-1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '2432'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'C07'
-  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
-  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2018
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05846'
-  BY_X_FU_X: 'BY'
-  QNAME: 'DALY MUSIC CNCRT'
-  FORM: '6'
-  VERSION: --
-  RESPCAT: 'NVR-EVRYDY(1-6)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6210'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'C07'
-  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
-  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2018
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '1="Never" 2="Seldom" 3="Sometimes" 4="Most Days" 5="Nearly Every Day" 6="Every Day"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05570'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST SMOK DLY'
-  FORM: '1'
-  VERSION: '3'
-  RESPCAT: 'GR_1ST_USE(8,1-7)'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7442'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2020
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05575'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST SMOK EVR'
-  FORM: '1'
-  VERSION: '3'
-  RESPCAT: 'GR_1ST_USE(8,1-7)'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7441'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2020
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05585'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST DRUNK'
-  FORM: '1'
-  VERSION: '2'
-  RESPCAT: 'GR_1ST_USE(8,1-7)'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7444'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2020
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
-  QUESTION_TEXT: --
-- ITEMREFNO: '05661'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST TRY CRACK'
-  FORM: '1'
-  VERSION: '3'
-  RESPCAT: 'GR_1ST_USE(8,1-7)'
-  FIRST_YR: 1991
-  LATEST_YR: 2024
-  VNUM_CONCAT: '7446'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2020
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
-  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Try "crack" cocaine'
-- ITEMREFNO: '05663'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST TRY POWCOK'
-  FORM: '1'
-  VERSION: '1'
-  RESPCAT: 'GR_1ST_USE(8,1-7)'
-  FIRST_YR: 1991
-  LATEST_YR: 2024
-  VNUM_CONCAT: '7447'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2020
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
-  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Try cocaine in powder form'
-- ITEMREFNO: '05575'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST SMOK EVR'
-  FORM: '2'
-  VERSION: '1'
-  RESPCAT: 'GR_1ST_USE(1-8)b'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7441'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2020
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10" 8="Never"'
-  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Smoke your first cigarette'
-- ITEMREFNO: '05570'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST SMOK DLY'
-  FORM: '2'
-  VERSION: '1'
-  RESPCAT: 'GR_1ST_USE(1-8)b'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '7442'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2020
-  CHG_TYPE: 'R'
-  CATEGORY_TEXT: '1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10" 8="Never"'
-  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Smoke cigarettes on a daily basis'
-- ITEMREFNO: '00044'
-  BY_X_FU_X: 'BY'
-  QNAME: 'R''S RACE PUERTO'
-  FORM: '6'
-  VERSION: '2'
-  RESPCAT: 'MARK_ALL(0,1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6603'
-  VNUM_CONCAT_CORE: '2527'
-  SUBJ_1: 'R01'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
-  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Puerto Rican'
-- ITEMREFNO: '00045'
-  BY_X_FU_X: 'BY'
-  QNAME: 'R''S RACE OTH HIS'
-  FORM: '6'
-  VERSION: '2'
-  RESPCAT: 'MARK_ALL(0,1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6604'
-  VNUM_CONCAT_CORE: '2528'
-  SUBJ_1: 'R01'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
-  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Other Hispanic or Latino'
-- ITEMREFNO: '00046'
-  BY_X_FU_X: 'BY'
-  QNAME: 'R''S RACE ASIAN'
-  FORM: '6'
-  VERSION: '2'
-  RESPCAT: 'MARK_ALL(0,1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6605'
-  VNUM_CONCAT_CORE: '2529'
-  SUBJ_1: 'R01'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
-  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Asian American'
-- ITEMREFNO: '00047'
-  BY_X_FU_X: 'BY'
-  QNAME: 'R''S RACE WHITE'
-  FORM: '6'
-  VERSION: '4'
-  RESPCAT: 'MARK_ALL(0,1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6606'
-  VNUM_CONCAT_CORE: '2530'
-  SUBJ_1: 'R01'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
-  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  White'
-- ITEMREFNO: '00047'
-  BY_X_FU_X: 'BY'
-  QNAME: 'R''S RACE WHITE'
-  FORM: '6'
-  VERSION: '3'
-  RESPCAT: 'MARK_ALL(0,1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6606'
-  VNUM_CONCAT_CORE: '2530'
-  SUBJ_1: 'R01'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2021
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
-  QUESTION_TEXT: 'How do you describe yourself? (Select one or more responses.)  White'
-- ITEMREFNO: '00048'
-  BY_X_FU_X: 'BY'
-  QNAME: 'R''S RACE IND/AK'
-  FORM: '6'
-  VERSION: '2'
-  RESPCAT: 'MARK_ALL(0,1)'
-  FIRST_YR: 2006
-  LATEST_YR: 2025
-  VNUM_CONCAT: '6607'
-  VNUM_CONCAT_CORE: '2531'
-  SUBJ_1: 'R01'
-  SUBJ_1_TEXT_LEV1: 'Background'
-  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
-  SUBJ_1_TEXT_LEV3: --
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
-  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  American Indian or Alaska Native'
-- ITEMREFNO: '05620'
-  BY_X_FU_X: 'BX'
-  QNAME: 'GR 1ST TRY AMP'
-  FORM: '2'
-  VERSION: '6'
-  RESPCAT: 'GR_1ST_USE(1-8)b'
-  FIRST_YR: 1991
-  LATEST_YR: 2025
-  VNUM_CONCAT: '8419'
-  VNUM_CONCAT_CORE: --
-  SUBJ_1: 'A01g'
-  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
-  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
-  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
-  SUBJ_2: --
-  SUBJ_2_TEXT_LEV1: --
-  SUBJ_2_TEXT_LEV2: --
-  SUBJ_2_TEXT_LEV3: --
-  SUBJ_3: --
-  SUBJ_3_TEXT_LEV1: --
-  SUBJ_3_TEXT_LEV2: --
-  SUBJ_3_TEXT_LEV3: --
-  ORIGQ: 0
-  CHG_YR: 2025
-  CHG_TYPE: 'Q'
-  CATEGORY_TEXT: '1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10" 8="Never"'
-  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Try  stimulant medications (Adderall, Dexedrine, Ritalin, Vyvanse, etc.)'
 - ITEMREFNO: '05850'
   BY_X_FU_X: 'BX'
   QNAME: 'DALY RIDE FORFUN'
@@ -195749,6 +194993,762 @@
   CHG_TYPE: 'Q'
   CATEGORY_TEXT: --
   QUESTION_TEXT: 'How difficult do you think it would be for you to get each of the following types of drugs, if you wanted some?  MDMA ("Molly," "ecstasy")'
+- ITEMREFNO: '30065'
+  BY_X_FU_X: 'BX'
+  QNAME: 'USUAL CIG BRAND'
+  FORM: '1'
+  VERSION: --
+  RESPCAT: 'CIGBRANDS(1-26)'
+  FIRST_YR: 1998
+  LATEST_YR: 2023
+  VNUM_CONCAT: '7176'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01l'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Kinds of drugs'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2013
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '26="American Spirit" 1="Basic" 2="Benson & Hedges" 3="Black & Whites" 4="Cambridge" 5="Camel" 6="Capri" 7="Carlton" 8="Doral" 9="GPC" 10="Kent" 11="Kool" 12="Marlboro" 13="Merit" 14="Misty" 15="Monarch" 16="More" 17="Newport" 18="Pall Mall" 19="Parliament'
+  QUESTION_TEXT: --
+- ITEMREFNO: '00310'
+  BY_X_FU_X: 'BX'
+  QNAME: 'FATHR EDUC LEVEL'
+  FORM: '2'
+  VERSION: '2'
+  RESPCAT: 'SCHOOLING(1-7)'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7215'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'R02'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Family characteristics'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2018
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '1="Completed grade school or less" 2="Some high school" 3="Completed high school" 4="Some college" 5="Completed college" 6="Graduate or professional school after college" 7="Don''t know, or does not apply"'
+  QUESTION_TEXT: 'The next two questions ask about your parents. If you were raised mostly by foster parents, stepparents, or others, answer for them. For example, if you have both a stepfather and a biological father, answer for the one that was most important in raising you.  What is the highest level of schooling your father completed?'
+- ITEMREFNO: '00630'
+  BY_X_FU_X: 'BX'
+  QNAME: '#X DATE 3+/WK'
+  FORM: '2'
+  VERSION: '5'
+  RESPCAT: 'NO_OF_DATES(1-6)'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7240'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'C07'
+  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
+  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: 'M01'
+  SUBJ_2_TEXT_LEV1: 'Interpersonal Relationships'
+  SUBJ_2_TEXT_LEV2: 'Dating'
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '1="Never" 2="Once a month or less" 3="2 or 3 times a month" 4="Once a week" 5="2 or 3 times a week" 6="Over 3 times a week"'
+  QUESTION_TEXT: 'On average, how often (if ever) do you go out with a date?'
+- ITEMREFNO: '22460'
+  BY_X_FU_X: 'BX'
+  QNAME: '#X SEE DRUG SPTS'
+  FORM: '2'
+  VERSION: '2'
+  RESPCAT: --
+  FIRST_YR: 1991
+  LATEST_YR: 2016
+  VNUM_CONCAT: '8401'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A10b'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Drug Education and Communication'
+  SUBJ_1_TEXT_LEV3: 'Education and communication in the mass media'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2016
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: --
+  QUESTION_TEXT: 'The next questions ask about anti-drug commercials or "spots" that are intended to discourage drug use. In recent months, about how often have you seen or heard such anti-drug commercials on TV, the internet or radio?'
+- ITEMREFNO: '00049'
+  BY_X_FU_X: 'BY'
+  QNAME: 'R''S RACE HI/OTPI'
+  FORM: '6'
+  VERSION: '2'
+  RESPCAT: 'MARK_ALL(0,1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6608'
+  VNUM_CONCAT_CORE: '2532'
+  SUBJ_1: 'R01'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
+  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Native Hawaiian or Other Pacific Islander'
+- ITEMREFNO: '22690'
+  BY_X_FU_X: 'BY'
+  QNAME: '#X STRD/LIFETIME'
+  FORM: '5'
+  VERSION: 'ANABOLTREAT'
+  RESPCAT: --
+  FIRST_YR: 2006
+  LATEST_YR: 2024
+  VNUM_CONCAT: '5527'
+  VNUM_CONCAT_CORE: '2493'
+  SUBJ_1: 'A01a'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Number of uses in lifetime'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2009
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: --
+  QUESTION_TEXT: 'Anabolic steroids are prescription drugs sometimes prescribed by doctors to treat certain conditions.  Some athletes, and others, have used them to try to increase muscle development.  On how many occasions (if any) have you taken steroids on your ownthat is, without a doctor telling you to take them. . .  . . . in your lifetime?'
+- ITEMREFNO: '22700'
+  BY_X_FU_X: 'BY'
+  QNAME: '#X STRD/LAST12MO'
+  FORM: '5'
+  VERSION: 'ANABOLTREAT'
+  RESPCAT: --
+  FIRST_YR: 2006
+  LATEST_YR: 2024
+  VNUM_CONCAT: '5528'
+  VNUM_CONCAT_CORE: '2494'
+  SUBJ_1: 'A01b'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Number of uses in last 12 months'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2009
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: --
+  QUESTION_TEXT: 'Anabolic steroids are prescription drugs sometimes prescribed by doctors to treat certain conditions.  Some athletes, and others, have used them to try to increase muscle development.  On how many occasions (if any) have you taken steroids on your ownthat is, without a doctor telling you to take them. . .  . . .  During the last 12 months?'
+- ITEMREFNO: '22710'
+  BY_X_FU_X: 'BY'
+  QNAME: '#X STRD/LAST30DA'
+  FORM: '5'
+  VERSION: 'ANABOLTREAT'
+  RESPCAT: --
+  FIRST_YR: 2006
+  LATEST_YR: 2024
+  VNUM_CONCAT: '5529'
+  VNUM_CONCAT_CORE: '2495'
+  SUBJ_1: 'A01c'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Number of uses in last 30 days'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2009
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: --
+  QUESTION_TEXT: 'Anabolic steroids are prescription drugs sometimes prescribed by doctors to treat certain conditions.  Some athletes, and others, have used them to try to increase muscle development.  On how many occasions (if any) have you taken steroids on your ownthat is, without a doctor telling you to take them. . .  . . .  During the last 30 days?'
+- ITEMREFNO: '05846'
+  BY_X_FU_X: 'BX'
+  QNAME: 'DALY MUSIC CNCRT'
+  FORM: '3'
+  VERSION: --
+  RESPCAT: 'EVRYDY-NVR(6-1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7310'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'C07'
+  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
+  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2018
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05846'
+  BY_X_FU_X: 'BX'
+  QNAME: 'DALY MUSIC CNCRT'
+  FORM: '4'
+  VERSION: --
+  RESPCAT: 'EVRYDY-NVR(6-1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7310'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'C07'
+  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
+  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2018
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05846'
+  BY_X_FU_X: 'BX'
+  QNAME: 'DALY MUSIC CNCRT'
+  FORM: '1'
+  VERSION: --
+  RESPCAT: 'EVRYDY-NVR(6-1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7310'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'C07'
+  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
+  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2018
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05846'
+  BY_X_FU_X: 'BX'
+  QNAME: 'DALY MUSIC CNCRT'
+  FORM: '2'
+  VERSION: --
+  RESPCAT: 'EVRYDY-NVR(6-1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7310'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'C07'
+  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
+  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2018
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05846'
+  BY_X_FU_X: 'BY'
+  QNAME: 'DALY MUSIC CNCRT'
+  FORM: '2'
+  VERSION: --
+  RESPCAT: 'EVRYDY-NVR(6-1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '2432'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'C07'
+  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
+  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2018
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '6="Every day" 5="Almost every day" 4="At least once a week" 3="Once or twice a month" 2="A few times a year" 1="Never"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05846'
+  BY_X_FU_X: 'BY'
+  QNAME: 'DALY MUSIC CNCRT'
+  FORM: '6'
+  VERSION: --
+  RESPCAT: 'NVR-EVRYDY(1-6)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6210'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'C07'
+  SUBJ_1_TEXT_LEV1: 'Work and Leisure'
+  SUBJ_1_TEXT_LEV2: 'Leisure time: extent, activities'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2018
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '1="Never" 2="Seldom" 3="Sometimes" 4="Most Days" 5="Nearly Every Day" 6="Every Day"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05570'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST SMOK DLY'
+  FORM: '1'
+  VERSION: '3'
+  RESPCAT: 'GR_1ST_USE(8,1-7)'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7442'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2020
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05575'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST SMOK EVR'
+  FORM: '1'
+  VERSION: '3'
+  RESPCAT: 'GR_1ST_USE(8,1-7)'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7441'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2020
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05585'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST DRUNK'
+  FORM: '1'
+  VERSION: '2'
+  RESPCAT: 'GR_1ST_USE(8,1-7)'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7444'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2020
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
+  QUESTION_TEXT: --
+- ITEMREFNO: '05661'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST TRY CRACK'
+  FORM: '1'
+  VERSION: '3'
+  RESPCAT: 'GR_1ST_USE(8,1-7)'
+  FIRST_YR: 1991
+  LATEST_YR: 2024
+  VNUM_CONCAT: '7446'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2020
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
+  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Try "crack" cocaine'
+- ITEMREFNO: '05663'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST TRY POWCOK'
+  FORM: '1'
+  VERSION: '1'
+  RESPCAT: 'GR_1ST_USE(8,1-7)'
+  FIRST_YR: 1991
+  LATEST_YR: 2024
+  VNUM_CONCAT: '7447'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2020
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '8="Never" 1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10"'
+  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Try cocaine in powder form'
+- ITEMREFNO: '05575'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST SMOK EVR'
+  FORM: '2'
+  VERSION: '1'
+  RESPCAT: 'GR_1ST_USE(1-8)b'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7441'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2020
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10" 8="Never"'
+  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Smoke your first cigarette'
+- ITEMREFNO: '05570'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST SMOK DLY'
+  FORM: '2'
+  VERSION: '1'
+  RESPCAT: 'GR_1ST_USE(1-8)b'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '7442'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2020
+  CHG_TYPE: 'R'
+  CATEGORY_TEXT: '1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10" 8="Never"'
+  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Smoke cigarettes on a daily basis'
+- ITEMREFNO: '00044'
+  BY_X_FU_X: 'BY'
+  QNAME: 'R''S RACE PUERTO'
+  FORM: '6'
+  VERSION: '2'
+  RESPCAT: 'MARK_ALL(0,1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6603'
+  VNUM_CONCAT_CORE: '2527'
+  SUBJ_1: 'R01'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
+  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Puerto Rican'
+- ITEMREFNO: '00045'
+  BY_X_FU_X: 'BY'
+  QNAME: 'R''S RACE OTH HIS'
+  FORM: '6'
+  VERSION: '2'
+  RESPCAT: 'MARK_ALL(0,1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6604'
+  VNUM_CONCAT_CORE: '2528'
+  SUBJ_1: 'R01'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
+  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Other Hispanic or Latino'
+- ITEMREFNO: '00046'
+  BY_X_FU_X: 'BY'
+  QNAME: 'R''S RACE ASIAN'
+  FORM: '6'
+  VERSION: '2'
+  RESPCAT: 'MARK_ALL(0,1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6605'
+  VNUM_CONCAT_CORE: '2529'
+  SUBJ_1: 'R01'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
+  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  Asian American'
+- ITEMREFNO: '00047'
+  BY_X_FU_X: 'BY'
+  QNAME: 'R''S RACE WHITE'
+  FORM: '6'
+  VERSION: '4'
+  RESPCAT: 'MARK_ALL(0,1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6606'
+  VNUM_CONCAT_CORE: '2530'
+  SUBJ_1: 'R01'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
+  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  White'
+- ITEMREFNO: '00047'
+  BY_X_FU_X: 'BY'
+  QNAME: 'R''S RACE WHITE'
+  FORM: '6'
+  VERSION: '3'
+  RESPCAT: 'MARK_ALL(0,1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6606'
+  VNUM_CONCAT_CORE: '2530'
+  SUBJ_1: 'R01'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2021
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
+  QUESTION_TEXT: 'How do you describe yourself? (Select one or more responses.)  White'
+- ITEMREFNO: '00048'
+  BY_X_FU_X: 'BY'
+  QNAME: 'R''S RACE IND/AK'
+  FORM: '6'
+  VERSION: '2'
+  RESPCAT: 'MARK_ALL(0,1)'
+  FIRST_YR: 2006
+  LATEST_YR: 2025
+  VNUM_CONCAT: '6607'
+  VNUM_CONCAT_CORE: '2531'
+  SUBJ_1: 'R01'
+  SUBJ_1_TEXT_LEV1: 'Background'
+  SUBJ_1_TEXT_LEV2: 'Age, sex, race, and marital status'
+  SUBJ_1_TEXT_LEV3: --
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '0="UNMARKED" 1="MARKED"'
+  QUESTION_TEXT: 'How do you describe your race/ethnicity? (Select one or more responses.)  American Indian or Alaska Native'
+- ITEMREFNO: '05620'
+  BY_X_FU_X: 'BX'
+  QNAME: 'GR 1ST TRY AMP'
+  FORM: '2'
+  VERSION: '6'
+  RESPCAT: 'GR_1ST_USE(1-8)b'
+  FIRST_YR: 1991
+  LATEST_YR: 2025
+  VNUM_CONCAT: '8419'
+  VNUM_CONCAT_CORE: --
+  SUBJ_1: 'A01g'
+  SUBJ_1_TEXT_LEV1: 'Drugs. Drug use and related attitudes and beliefs, drug availability and exposure, surroundingconditions and social meaning of drug use. Views of significant others regarding drugs'
+  SUBJ_1_TEXT_LEV2: 'Use of Various Licit and Illicit Drugs'
+  SUBJ_1_TEXT_LEV3: 'Incidence of first use'
+  SUBJ_2: --
+  SUBJ_2_TEXT_LEV1: --
+  SUBJ_2_TEXT_LEV2: --
+  SUBJ_2_TEXT_LEV3: --
+  SUBJ_3: --
+  SUBJ_3_TEXT_LEV1: --
+  SUBJ_3_TEXT_LEV2: --
+  SUBJ_3_TEXT_LEV3: --
+  ORIGQ: 0
+  CHG_YR: 2025
+  CHG_TYPE: 'Q'
+  CATEGORY_TEXT: '1="Grade 4 or below" 2="Grade 5" 3="Grade 6" 4="Grade 7" 5="Grade 8" 6="Grade 9" 7="Grade 10" 8="Never"'
+  QUESTION_TEXT: 'When (if ever) did you FIRST do each of the following things?  Don''t count anything you took because a doctor told you to.  Try  stimulant medications (Adderall, Dexedrine, Ritalin, Vyvanse, etc.)'
 - ITEMREFNO: '05620'
   BY_X_FU_X: 'BX'
   QNAME: 'GR 1ST TRY AMP'
