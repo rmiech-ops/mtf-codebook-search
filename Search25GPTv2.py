@@ -210,6 +210,15 @@ def origq_to_yes_no(x) -> str:
         return ""
     return str(x)
 
+
+def vnum_add_v_prefix(x) -> str:
+    s = str(x).strip()
+    if not s or s.lower() in ("nan", "none"):
+        return s
+    if s.upper().startswith("V"):
+        return s
+    return "V" + s
+
 ENV_YAML = os.environ.get("MTF_YAML_PATH", "").strip()
 CANDIDATES = []
 if ENV_YAML:
@@ -704,11 +713,9 @@ def render_wrapped_html_table(df_in: pd.DataFrame, height_px: int = 800) -> None
         s = s.str.replace(r"\s+$", "", regex=True)
         new_cols[col] = s
     df = pd.DataFrame(new_cols, index=df.index)
-    rename_map = {"VNUM_CONCAT": "VNUM_\nCONCAT", "VNUM_CONCAT\nCORE": "VNUM_\nCONCATCORE"}
-    df = df.rename(columns=rename_map)
     cols = list(df.columns)
     col_width_px = {
-        "Question\nID": 73,
+        "Question ID\n(item number)": 110,
         "Variable\nlabel": 135,
         "Grade": 85,
         "Form": 55,
@@ -719,9 +726,7 @@ def render_wrapped_html_table(df_in: pd.DataFrame, height_px: int = 800) -> None
         "Type of\nQuestion Change": 85,
         "Question\ntext": 350,
         "Response\nCategories": 230,
-        "Version": 65,
-        "VNUM_\nCONCAT": 95,
-        "VNUM_\nCONCATCORE": 115,
+        "Variable\nname": 90,
     }
     colgroup = "<colgroup>\n"
     for c in cols:
@@ -741,15 +746,15 @@ def render_wrapped_html_table(df_in: pd.DataFrame, height_px: int = 800) -> None
     html_table = re.sub(r"<th>(.*?)</th>", _th_repl, html_table, count=0)
     css_lines = []
     center_all = {
-        "Question\nID",
+        "Question ID\n(item number)",
         "Grade",
         "Form",
         "First\nyear",
         "Latest\nyear",
         "Original\nQuestion",
-        "Version",
         "Year Question\nChanged",
         "Type of\nQuestion Change",
+        "Variable\nname",
     }
     header_center_only = {
         "Variable\nlabel",
@@ -932,16 +937,21 @@ def build_cached_fields(path_str: str, mtime: float):
     scale = _df["CATEGORY_TEXT"].astype(str).apply(detect_scale_from_category)
     sig = _df["CATEGORY_TEXT"].astype(str).apply(category_signature)
     subj_norm = {c: _df[c].astype(str).apply(normalize_for_match) for c in subj_cols}
-    return blob, qnorm, cnorm, scale, sig, subj_norm
+    if "ITEMREFNO" in _df.columns:
+        irn_norm = _df["ITEMREFNO"].astype(str).apply(normalize_for_match)
+    else:
+        irn_norm = pd.Series([""] * len(_df), index=_df.index)
+    return blob, qnorm, cnorm, scale, sig, subj_norm, irn_norm
 
 
-blob, qnorm, cnorm, scale_series, sig_series, subj_norm = build_cached_fields(str(FILE_PATH), mtime)
+blob, qnorm, cnorm, scale_series, sig_series, subj_norm, irn_norm = build_cached_fields(str(FILE_PATH), mtime)
 df = df.copy()
 df["__BLOB_NORM"] = blob
 df["__QTEXT_NORM"] = qnorm
 df["__CAT_NORM"] = cnorm
 df["__SCALE"] = scale_series
 df["__CAT_SIG"] = sig_series
+df["__IRN_NORM"] = irn_norm
 for k, v in {
     "__SUBJ_1_L1": "SUBJ_1_TEXT_LEV1",
     "__SUBJ_1_L2": "SUBJ_1_TEXT_LEV2",
@@ -984,8 +994,8 @@ with st.sidebar:
     search_query = st.text_input(
         "Exact word search (no AI assistance)",
         placeholder='Example: risk lsd',
-        help=("Search includes question_text, category_text, and variable label. "
-              "Use quotes and AND/OR."),
+        help=("Search includes question_text, category_text, variable label, and "
+              "question ID (item reference number). Use quotes and AND/OR."),
         key="ui_search_query",
     )
 
@@ -1599,12 +1609,13 @@ def apply_filters_cached(
     ai_max_hits_target: int,
 ) -> Tuple[pd.DataFrame, Dict[str, object]]:
     _df = load_data(path_str, mtime).copy()
-    blob, qnorm, cnorm, scale_series, sig_series, subj_norm = build_cached_fields(path_str, mtime)
+    blob, qnorm, cnorm, scale_series, sig_series, subj_norm, irn_norm = build_cached_fields(path_str, mtime)
     _df["__BLOB_NORM"] = blob
     _df["__QTEXT_NORM"] = qnorm
     _df["__CAT_NORM"] = cnorm
     _df["__SCALE"] = scale_series
     _df["__CAT_SIG"] = sig_series
+    _df["__IRN_NORM"] = irn_norm
     for k, v in {
         "__SUBJ_1_L1": "SUBJ_1_TEXT_LEV1",
         "__SUBJ_1_L2": "SUBJ_1_TEXT_LEV2",
@@ -1820,7 +1831,10 @@ def apply_filters_cached(
             for t in terms:
                 tn = normalize_for_match(t)
                 if tn:
-                    masks.append(filtered["__BLOB_NORM"].str.contains(re.escape(tn), na=False))
+                    masks.append(
+                        filtered["__BLOB_NORM"].str.contains(re.escape(tn), na=False)
+                        | filtered["__IRN_NORM"].str.contains(re.escape(tn), na=False)
+                    )
             if masks:
                 mask = masks[0]
                 for m in masks[1:]:
@@ -1854,7 +1868,7 @@ def apply_filters_cached(
     if latest_range is not None:
         y0, y1 = latest_range
         s = pd.to_numeric(filtered["LATEST_YR"], errors="coerce")
-        filtered = filtered[s.notna() & (s >= y0) & (s <= y1)]
+        filtered = filtered[s.notna() & (s <= y1) & (s >= y0)] if False else filtered[s.notna() & (s >= y0) & (s <= y1)]
 
     return filtered, debug
 
@@ -1880,7 +1894,8 @@ for _col in filtered.columns:
 
 DROP_COLS = [
     "FIRST_YR_NUM", "LATEST_YR_NUM", "WEB", "RESPCAT_ID", "VERS_ORIG",
-    "__BLOB_NORM", "__QTEXT_NORM", "__CAT_NORM", "__SCALE", "__CAT_SIG",
+    "VERSION", "VNUM_CONCAT", "VNUM_CONCAT_CORE",
+    "__BLOB_NORM", "__QTEXT_NORM", "__CAT_NORM", "__SCALE", "__CAT_SIG", "__IRN_NORM",
     "__SUBJ_1_L1", "__SUBJ_1_L2", "__SUBJ_1_L3",
     "__SUBJ_2_L1", "__SUBJ_2_L2", "__SUBJ_2_L3",
     "__SUBJ_3_L1", "__SUBJ_3_L2", "__SUBJ_3_L3",
@@ -1904,10 +1919,7 @@ safe_df = safe_df.rename(columns={
     "CHG_TYPE": "type_of_question_change",
     "QUESTION_TEXT": "question_text",
     "CATEGORY_TEXT": "response_categories",
-    "VERSION": "version",
     "VNUM": "vnum",
-    "VNUM_CONCAT": "vnum_concat",
-    "VNUM_CONCAT_CORE": "vnum_concat_core",
 })
 
 if "grade" in safe_df.columns:
@@ -1915,6 +1927,9 @@ if "grade" in safe_df.columns:
 
 if "original_question" in safe_df.columns:
     safe_df["original_question"] = safe_df["original_question"].apply(origq_to_yes_no)
+
+if "vnum" in safe_df.columns:
+    safe_df["vnum"] = safe_df["vnum"].apply(vnum_add_v_prefix)
 
 preferred_order = [
     "irn",
@@ -1928,17 +1943,14 @@ preferred_order = [
     "type_of_question_change",
     "question_text",
     "response_categories",
-    "version",
     "vnum",
-    "vnum_concat",
-    "vnum_concat_core",
 ]
 
 cols = [c for c in preferred_order if c in safe_df.columns]
 safe_df = safe_df[cols]
 
 PRETTY_COLS = {
-    "irn": "Question\nID",
+    "irn": "Question ID\n(item number)",
     "variable_label": "Variable\nlabel",
     "grade": "Grade",
     "form": "Form",
@@ -1949,10 +1961,7 @@ PRETTY_COLS = {
     "type_of_question_change": "Type of\nQuestion Change",
     "question_text": "Question\ntext",
     "response_categories": "Response\nCategories",
-    "version": "Version",
-    "vnum": "VNUM",
-    "vnum_concat": "VNUM_CONCAT",
-    "vnum_concat_core": "VNUM_CONCAT\nCORE",
+    "vnum": "Variable\nname",
 }
 
 safe_df_pretty = safe_df.rename(columns=PRETTY_COLS)
@@ -2023,11 +2032,8 @@ if accessible_view:
         origq_val = row.get("original_question", "")
         chgyr_val = row.get("year_question_changed", "")
         chgtype_val = row.get("type_of_question_change", "")
-        version_val = row.get("version", "")
-        vcat_val = row.get("vnum_concat", "")
-        vcore_val = row.get("vnum_concat_core", "")
         cattext_val = row.get("response_categories", "")
-        key_seed = f"row{i}_irn{irn_val}_vc{vcat_val}_vcc{vcore_val}_g{grade_val}_f{form_val}"
+        key_seed = f"row{i}_irn{irn_val}_g{grade_val}_f{form_val}"
         title_bits = []
         if str(irn_val).strip():
             title_bits.append(f"Question ID {irn_val}")
@@ -2037,10 +2043,6 @@ if accessible_view:
             title_bits.append(f"GRADE {grade_val}")
         if str(form_val).strip():
             title_bits.append(f"FORM {form_val}")
-        if str(vcat_val).strip():
-            title_bits.append(f"VNUM_CONCAT {vcat_val}")
-        if str(vcore_val).strip():
-            title_bits.append(f"VNUM_CONCAT_CORE {vcore_val}")
         header = " - ".join(title_bits) if title_bits else "Result"
         with st.expander(header, expanded=False):
             years_line = ""
@@ -2054,15 +2056,14 @@ if accessible_view:
                 st.write(f"Year Question Changed: {chgyr_val}")
             if str(chgtype_val).strip() and str(chgtype_val).strip() != "--":
                 st.write(f"Type of Question Change: {chgtype_val}")
-            if str(version_val).strip():
-                st.write(f"Version: {version_val}")
             st.text_area("Question text", value=str(row.get("question_text", "")), height=180, key=f"qa_text_{key_seed}")
             st.text_area("Response Categories", value=str(cattext_val), height=110, key=f"qa_cat_{key_seed}")
 
             other = row.drop(labels=["question_text", "response_categories"], errors="ignore")
 
             field_map = {
-                "irn": "Question ID"
+                "irn": "Question ID",
+                "vnum": "Variable name",
             }
 
             other_df = pd.DataFrame({
