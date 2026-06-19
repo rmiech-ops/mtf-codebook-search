@@ -1076,7 +1076,7 @@ with st.sidebar:
         )
 
     irn = st.text_input("Question ID", key="ui_irn")
-    vnum = st.text_input("VNUM exact", key="ui_vnum")
+    vnum = st.text_input("VNUM", key="ui_vnum")
     first_vals = df["FIRST_YR_NUM"].dropna()
     latest_vals = df["LATEST_YR_NUM"].dropna()
 
