@@ -1856,8 +1856,19 @@ def apply_filters_cached(
         else:
             filtered = filtered[col_s == irn_s]
     if vnum:
-       vnum_s = str(vnum).strip()
-       filtered = filtered[filtered["VNUM"].astype(str).str.strip() == vnum_s]
+       vnum_s = str(vnum).strip().upper()
+       if vnum_s.startswith("V"):
+           vnum_s = vnum_s[1:]
+
+       vnum_col = (
+           filtered["VNUM"]
+           .astype(str)
+           .str.strip()
+           .str.upper()
+           .str.lstrip("V")
+       )
+
+       filtered = filtered[vnum_col == vnum_s]        
     if first_range is not None:
         y0, y1 = first_range
         s = pd.to_numeric(filtered["FIRST_YR"], errors="coerce")
