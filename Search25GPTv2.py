@@ -1076,8 +1076,7 @@ with st.sidebar:
         )
 
     irn = st.text_input("Question ID", key="ui_irn")
-    vnum_concat = st.text_input("VNUM_CONCAT exact", key="ui_vnum_concat")
-    vnum_concat_core = st.text_input("VNUM_CONCAT_CORE exact", key="ui_vnum_concat_core")
+    vnum = st.text_input("VNUM exact", key="ui_vnum")
     first_vals = df["FIRST_YR_NUM"].dropna()
     latest_vals = df["LATEST_YR_NUM"].dropna()
 
@@ -1602,8 +1601,7 @@ def apply_filters_cached(
     selected_grades: tuple,
     selected_forms: tuple,
     irn: str,
-    vnum_concat: str,
-    vnum_concat_core: str,
+    vnum: str,
     first_range,
     latest_range,
     ai_max_hits_target: int,
@@ -1857,10 +1855,9 @@ def apply_filters_cached(
             filtered = filtered2
         else:
             filtered = filtered[col_s == irn_s]
-    if vnum_concat:
-        filtered = filtered[filtered["VNUM_CONCAT"].astype(str) == str(vnum_concat).strip()]
-    if vnum_concat_core:
-        filtered = filtered[filtered["VNUM_CONCAT_CORE"].astype(str) == str(vnum_concat_core).strip()]
+    if vnum:
+    vnum_s = str(vnum).strip()
+    filtered = filtered[filtered["VNUM"].astype(str).str.strip() == vnum_s]
     if first_range is not None:
         y0, y1 = first_range
         s = pd.to_numeric(filtered["FIRST_YR"], errors="coerce")
@@ -1882,8 +1879,7 @@ filtered, ai_debug = apply_filters_cached(
     tuple(selected_grades),
     tuple(selected_forms),
     irn,
-    vnum_concat,
-    vnum_concat_core,
+    vnum,
     first_range,
     latest_range,
     int(AI_MAX_HITS_TARGET_DEFAULT),
