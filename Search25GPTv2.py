@@ -1656,7 +1656,7 @@ def apply_filters_cached(
     filtered = _df
     has_ai = bool((ai_query or "").strip())
     has_lit = bool((search_query or "").strip())
-    has_id = bool(str(irn or "").strip() or str(vnum_concat or "").strip() or str(vnum_concat_core or "").strip())
+    has_id = bool(str(irn or "").strip() or str(vnum or "").strip())
     ALL_GRADES_DEFAULT = ("BY", "BX")
     ALL_FORMS_DEFAULT = tuple(str(i) for i in range(1, 7))
     grades_tuple = tuple(selected_grades) if selected_grades else tuple()
@@ -1964,7 +1964,7 @@ safe_df_pretty = safe_df.rename(columns=PRETTY_COLS)
 
 has_ai = bool((ai_query or "").strip())
 has_lit = bool((search_query or "").strip())
-has_id = bool(str(irn or "").strip() or str(vnum_concat or "").strip() or str(vnum_concat_core or "").strip())
+has_id = bool(str(irn or "").strip() or str(vnum or "").strip())
 grade_changed = set(tuple(selected_grades)) != set(("BY", "BX"))
 form_changed = set(tuple(selected_forms)) != set(tuple(str(i) for i in range(1, 7)))
 year_filter_on = (first_range is not None) or (latest_range is not None)
